@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hakkımda</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div class="kapsayici">
+            <div class="daire"></div>
+            
+            <p class="paragraf1" border="2">Ben Burak Akalın. 17 Mayıs 2005 tarihinde Antalya'da doğdum. Sakarya Üniversitesi'nde Bilgisayar Mühendisliği okumaktayım.</p>
+        </div>
+
+       
+            
+
+        <section class="hobilerim" border="2">
+    <div class="hobiler">
+        <!-- Soldaki başlık -->
+        <div class="sol">
+            <h3>HOBİLERİM</h3>
+        </div>
+
+        <!-- Dikey Çizgi -->
+        <div class="cizgi"></div>
+
+        <!-- Hobiler Listesi -->
+        <div class="orta">
+            <ul>
+                <li>-Futbol Oynamak</li>
+                <li>-Müzik Dinlemek</li>
+                <li>-Doğa Yürüyüşleri</li>
+                <li>-Dizi İzlemek</li>
+            </ul>
+        </div>
+
+        <!-- Sağdaki Dikdörtgen -->
+        <div class="sag">
+            <div class="dikdortgen"></div>
+        </div>
+    </div>
+</section>
+      
+        
+
+    </body>
+
+    <style>
+        body{
+            background-color: #A1E3F9;
+            background-image: linear-gradient(to bottom , #27548A,#A1E3F9);
+        }
+        
+
+        .kapsayici {
+            display: flex;         /* Yanyana yerleştirir */
+            align-items: center;   /* Dikeyde ortalar (isteğe bağlı) */
+            margin: 50px;
+            margin-top: 80px;
+        }
+
+        .daire{
+            background-color: transparent;
+            border: 2px solid #ffffff;           
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            margin-left: 40px;
+        }
+
+        .paragraf1 {
+            font-family: 'Montserrat','sans serif';
+            color: #ffffff;
+            margin-left: 60px;
+          
+        }
+        
+        .hobilerim {
+            width: 90%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+        }
+
+        .hobiler {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .sol {
+            width: 25%;
+            text-align: left;
+        }
+
+        h3{
+            font-family: 'Montserrat','sans serif';
+            color: #ffffff;  
+            margin-left: 80px;           /* Başlık sola hizalı */
+            margin-bottom: 10px; /* Başlık ile paragraf arasındaki boşluk */
+            font-size: 24px;
+            
+
+        }
+
+        .cizgi {
+            width: 3px;
+            height: 150px;
+            background-color: #ffffff;
+            margin: 0 10px;
+        }
+
+        .orta {
+            font-family: 'Montserrat','sans serif';
+            color: #ffffff;
+            width: 40%;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 18px;
+            padding: 10px 0;
+        }
+
+        .sag {
+            width: 40%;
+        }
+
+        .dikdortgen {
+            width: 480px;
+            height: 180px;
+            background-color: #ddd;
+            border: 2px solid #008CBA;
+            border-radius: 20px;
+        }
+   
+    </style>
+</html>
