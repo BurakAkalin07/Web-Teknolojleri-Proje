@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>İletişim</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+        <a href="anasayfa.html"><button>Ana Sayfa</button></a>
+        <a href="hakkimda.html"><button>Hakkımda</button></a>
+        <a href="ozgecmisim.html"><button>Öz Geçmişim</button></a>
+        <a href="sehrim.html"><button>Şehrim</button></a>
+        <a href="takimimiz.html"><button>Takımımız</button></a>
+        <a href="ilgialanlarim.html"><button>İlgi Alanlarım</button></a>
+        <a href="iletisim.html"><button>İletişim</button></a>
+    </header>
+
+    <form>
+        <h2>Bize Ulaşın</h2>
+
+        <label for="ad">Adınız:</label>
+        <input type="text" name="ad" id="ad" required><br>
+
+        <label for="soyad">Soyadınız:</label>
+        <input type="text" name="soyad" id="soyad" required><br>
+
+        <label for="yas">Yaşınız:</label>
+        <input type="number" id="yas" name="yas" min="10" max="100"><br>
+
+        <label>Cinsiyetiniz:</label>
+            <div class="radio-grup">
+                <label for="erkek">Erkek</label>
+                <input type="radio" id="erkek" name="cinsiyet" value="erkek">
+                    
+                <label for="kadin">Kadın</label>
+                <input type="radio" id="kadin" name="cinsiyet" value="kadin">
+                    
+            </div>   
+
+        <label for="email">E-posta Adresiniz:</label>
+        <input type="email" name="email" id="email" required><br>
+
+        <label for="tel">Telefon Numaranız:</label>
+        <input type="tel" name="tel" id="tel" required><br>
+
+        <label for="konu">Mesajınızın Konusu:</label>
+        <select id="konu" name="konu">               
+            <option value="oneri">Öneri</option>
+            <option value="sikayet">Şikayet</option>               
+        </select>
+
+        <label for="mesaj">Mesajınız:</label>
+        <textarea id="mesaj" name="mesaj"></textarea>
+            
+            
+
+        <button type="submit">Doğrula</button>
+        <button type="submit">Gönder</button>
+        <button type="reset">Temizle</button>
+
+    </form>
+
+    <style>
+        body{
+            font-family: 'Montserrat','sans serif';
+            background-color: #A1E3F9;
+            background-image: linear-gradient(to bottom , #27548A,#A1E3F9);
+        }
+
+        form h2{
+            color: #ffffff;
+            text-align: center;
+            margin-top: 5px;
+                
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(6px);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: 40px auto;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        form label{
+            color: #ffffff;
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+
+            
+
+        form input,form select{           
+            width: 100%;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;               
+            font-family: 'Montserrat', sans-serif;
+        }
+
+            
+
+        form textarea {
+            resize:vertical;
+            max-height: 200px;
+            width: 100%;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .radio-grup {
+            display: flex;
+            align-items: center;               
+            border-radius: 5px;
+            margin-bottom: 5px;
+                
+        }
+
+        .radio-grup input[type="radio"] {
+            margin-right: 100px;
+            margin-top: 20px;
+                
+        }
+
+       
+        form button {
+            background-color: #1d3f66;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #143251;
+        }
+
+        header{
+            background: rgba(255, 255, 255, 0.075);
+            backdrop-filter: blur(10px);                      
+            padding: 20px ;
+            display: flex;
+            justify-content: center;
+            align-items: center;                                
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2); 
+        }
+
+        header a {
+            text-decoration: none;
+            margin: 0 7px;
+        }
+
+        header button {
+            background-color: transparent;
+            color: white;
+            border: none;   
+            padding: 10px 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;           
+            transition: 0.3s ease-in-out;
+        }
+
+        header button:hover {
+            background-color: #1d3f66;
+            transform: scale(1.05) ;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+              
+        </style>
+
+    </body>
+</html>
