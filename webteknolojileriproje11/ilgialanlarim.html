@@ -1,0 +1,214 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>İlgi Alanlarım</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a href="anasayfa.html"><button>Ana Sayfa</button></a>
+        <a href="hakkimda.html"><button>Hakkımda</button></a>
+        <a href="ozgecmisim.html"><button>Öz Geçmişim</button></a>
+        <a href="sehrim.html"><button>Şehrim</button></a>
+        <a href="takimimiz.html"><button>Takımımız</button></a>
+        <a href="ilgialanlarim.html"><button>İlgi Alanlarım</button></a>
+        <a href="iletisim.html"><button>İletişim</button></a>
+    </header>
+
+    <h1>Fotoğraflar</h1>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Anahtar kelime girin...">
+        <button onclick="searchPhotos()">Ara</button>
+      </div>
+    <div class="photo-container" id="photo-container"></div>
+
+    <footer>
+        &copy; 2025 Burak Akalın
+    </footer>
+
+  <script>
+  const apiKey = 'UmWWFhFz2L6VRi2Qasv6VxPeiEO6RZzO8ZzgJsFYdIl37byBSwRJnmY8';
+
+  function searchPhotos() {
+    const keyword = document.getElementById('search-input').value;
+    if (!keyword) return;
+
+    const url = `https://api.pexels.com/v1/search?query=${keyword}&per_page=21&page=1`;
+
+    fetch(url, {
+      headers: {
+        Authorization: apiKey
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      const photos = data.photos;
+      const photoContainer = document.getElementById('photo-container');
+      photoContainer.innerHTML = ''; 
+
+      photos.forEach(photo => {
+        const photoDiv = document.createElement('div');
+        photoDiv.className = 'photo';
+
+        photoDiv.innerHTML = `
+          <img src="${photo.src.medium}" alt="${photo.alt}">
+          <p>${photo.photographer}</p>
+        `;
+
+        photoContainer.appendChild(photoDiv);
+      });
+    })
+    .catch(error => console.error("Veri çekme hatası:", error));
+  }
+</script>
+
+
+  <style>
+    body {
+      font-family: 'Montserrat','sans serif';
+      background-color: #A1E3F9;
+      background-image: linear-gradient(to bottom , #27548A,#A1E3F9);
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      font-size: 2rem;
+      margin-bottom: 100px;
+      
+    }
+
+    .photo-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 30px;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .photo {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .photo p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1rem;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .photo-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+
+      .photo p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin: 30px auto;
+    }
+
+    .search-box input {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #fff;
+      border-radius: 5px 0 0 5px;
+      width: 250px;
+    }
+
+    .search-box button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #1d3f66;
+      color: white;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+
+    .search-box button:hover {
+      background-color: #163352;
+    }
+
+    header{
+        background: rgba(255, 255, 255, 0.075);
+        backdrop-filter: blur(10px);                      
+        padding: 20px ;
+        display: flex;
+        justify-content: center;
+        align-items: center;                                
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); 
+    }
+
+    header a {
+        text-decoration: none;
+        margin: 0 7px;
+    }
+
+    header button {
+        background-color: transparent;
+        color: white;
+        border: none;   
+        padding: 10px 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;           
+        transition: 0.3s ease-in-out;
+    }
+
+        
+
+    header button:hover {
+        background-color: #1d3f66;
+        transform: scale(1.05) ;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        text-align: center;
+    }
+  </style>
+
+</body>
+</html>
