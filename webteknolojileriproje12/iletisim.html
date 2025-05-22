@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>İletişim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <style>
+    body {
+        font-family: 'Montserrat','sans serif';
+        background-color: #A1E3F9;
+        background-image: linear-gradient(to bottom , #27548A,#A1E3F9);
+    }
+
+    form h2 {
+        color: #ffffff;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    form {     
+        padding: 40px;
+        max-width: 500px;
+        margin: 40px auto;
+        background-color: rgba(255, 255, 255, 0.2);
+        color:#ffffff;               
+        border-radius: 8px;
+        box-shadow: 0 0 10px #1d3f66, 0 0 10px #1d3f66, 0 0 10px #1d3f66;
+    }
+
+    form label {
+        color: #ffffff;
+        display: block;
+        margin: 15px 0 5px;
+        font-weight: bold;
+    }
+
+    form input,form select {
+        width: 100%;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    form textarea {
+        resize: vertical;
+        max-height: 200px;
+        width: 100%;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .radio-grup {
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    .radio-grup input[type="radio"] {
+        margin-right: 100px;
+        margin-top: 20px;
+    }
+
+    form button {
+        background-color: #1d3f66;
+        color: white;
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    form button:hover {
+        background-color: #143251;
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+    header{
+        background: rgba(255, 255, 255, 0.075);
+        backdrop-filter: blur(10px);                      
+        padding: 20px ;
+        display: flex;
+        justify-content: center;
+        align-items: center;                                
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); 
+    }
+
+    header a {
+        text-decoration: none;
+        margin: 0 7px;
+    }
+
+    header button {
+        background-color: transparent;
+        color: white;
+        border: none;   
+        padding: 10px 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+    }
+
+    header button:hover {
+        background-color: #1d3f66;
+        transform: scale(1.05) ;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+    <header>
+      <a href="anasayfa.html"><button>Ana Sayfa</button></a>
+      <a href="hakkimda.html"><button>Hakkımda</button></a>
+      <a href="ozgecmisim.html"><button>Öz Geçmişim</button></a>
+      <a href="sehrim.html"><button>Şehrim</button></a>
+      <a href="takimimiz.html"><button>Takımımız</button></a>
+      <a href="ilgialanlarim.html"><button>İlgi Alanlarım</button></a>
+      <a href="iletisim.html"><button>İletişim</button></a>
+    </header>
+
+  <div id="app">
+
+    <form @submit.prevent="submitForm">
+      <h2>Bize Ulaşın</h2>
+
+      <label for="ad">Adınız:</label>
+      <input type="text" v-model="form.ad"><br>
+
+      <label for="soyad">Soyadınız:</label>
+      <input type="text" v-model="form.soyad"><br>
+
+      <label for="yas">Yaşınız:</label>
+      <input type="number" v-model="form.yas"><br>
+
+      <label>Cinsiyetiniz:</label>
+      <div class="radio-grup">
+        <label for="erkek">Erkek</label>
+        <input type="radio" id="erkek" value="Erkek" v-model="form.cinsiyet">
+
+        <label for="kadin">Kadın</label>
+        <input type="radio" id="kadin" value="Kadın" v-model="form.cinsiyet">
+      </div>
+
+      <label for="email">E-posta Adresiniz:</label>
+      <input type="text" v-model="form.email"><br>
+
+      <label for="tel">Telefon Numaranız:</label>
+      <input type="text" v-model="form.tel"><br>
+
+      <label for="konu">Mesajınızın Konusu:</label>
+      <select v-model="form.konu">
+        <option value="Öneri">Öneri</option>
+        <option value="Şikayet">Şikayet</option>
+      </select>
+
+      <label for="mesaj">Mesajınız:</label>
+      <textarea v-model="form.mesaj"></textarea>
+
+      <button type="button" @click="validateForm">Doğrula</button>
+      <button type="submit">Gönder</button>
+      <button type="button" @click="resetForm">Temizle</button>
+
+      <div v-if="errors.length">
+        <ul>
+          <li v-for="err in errors" style="color:rgb(237, 8, 73);">{{ err }}</li>
+        </ul>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        form: {
+          ad: '',
+          soyad: '',
+          yas: '',
+          cinsiyet: '',
+          email: '',
+          tel: '',
+          konu: 'Öneri',
+          mesaj: ''
+        },
+        errors: []
+      },
+      methods: {
+        validateForm() {
+          this.errors = [];
+
+          if (!this.form.ad) this.errors.push("Ad boş olamaz.");
+          if (!this.form.soyad) this.errors.push("Soyad boş olamaz.");
+          if (!this.form.yas) this.errors.push("Yaş girilmeli.");
+          if (!this.form.cinsiyet) this.errors.push("Cinsiyet seçilmeli.");
+          if (!this.form.email || !this.validEmail(this.form.email)) {
+            this.errors.push("Geçerli bir email girin.");
+          }
+          if (!this.form.tel || !/^\d+$/.test(this.form.tel)) {
+            this.errors.push("Telefon sadece rakamlardan oluşmalıdır.");
+            } else if (!this.form.tel.startsWith("05")) {
+            this.errors.push("Telefon numarası 05 ile başlamalıdır.");
+            } else if (this.form.tel.length !== 11) {
+            this.errors.push("Telefon numarası 11 haneli olmalıdır.");
+            }
+          if (!this.form.mesaj) this.errors.push("Mesaj boş olamaz.");
+        },
+        validEmail(email) {
+          var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(email);
+        },
+        resetForm() {
+          this.form = {
+            ad: '',
+            soyad: '',
+            yas: '',
+            cinsiyet: '',
+            email: '',
+            tel: '',
+            konu: 'Öneri',
+            mesaj: ''
+          };
+          this.errors = [];
+        },
+        submitForm() {
+          this.validateForm();
+          if (this.errors.length === 0) {
+            localStorage.setItem("formData", JSON.stringify(this.form));
+            window.location.href = "sonuc.html";
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

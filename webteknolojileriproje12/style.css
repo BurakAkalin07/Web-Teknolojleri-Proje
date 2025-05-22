@@ -1,0 +1,81 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #A1E3F9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+}
+.giris-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+            
+}
+
+.giris-form {
+    background-color: #285f86;
+    padding: 50px;
+    border-radius: 40px;
+    box-shadow: 0 64px 128px rgba(44, 82, 152, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+.giris-form h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input {
+    width: 100%;
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    background-color: #133253;
+    border: white;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff;
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: #14759b;
+}
+
+h1 {
+    color: #f44336;
+    text-align: center;
+}

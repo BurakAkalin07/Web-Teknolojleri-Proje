@@ -1,0 +1,42 @@
+body {
+    background-color: #A1E3F9;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 600;   
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.butonlar a button {
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #285f86;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.butonlar a button:hover {
+    background-color: #133253;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.butonlar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
