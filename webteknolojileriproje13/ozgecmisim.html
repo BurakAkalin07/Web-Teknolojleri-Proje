@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Öz Geçmiş</title>   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header class="d-flex flex-wrap justify-content-center p-3">
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+            <a href="anasayfa.html" class="btn btn-outline-light m-1 benimButon">Ana Sayfa</a>
+            <a href="hakkimda.html" class="btn btn-outline-light m-1 benimButon">Hakkımda</a>
+            <a href="ozgecmisim.html" class="btn btn-outline-light m-1 benimButon">Öz Geçmişim</a>
+            <a href="sehrim.html" class="btn btn-outline-light m-1 benimButon">Şehrim</a>
+            <a href="takimimiz.html" class="btn btn-outline-light m-1 benimButon">Takımımız</a>
+            <a href="ilgialanlarim.html" class="btn btn-outline-light m-1 benimButon">İlgi Alanlarım</a>
+            <a href="iletisim.html" class="btn btn-outline-light m-1 benimButon">İletişim</a>
+        </div>
+
+    </header>
+
+    <nav class="text-center mt-3">
+        <h2>BURAK AKALIN</h2>
+    </nav>
+
+    <section class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <h3>Kişisel Bilgiler</h3>
+                <article class="kisisel">
+                    <p><strong>Ad:</strong> Burak Akalın</p>
+                    <p><strong>E-posta Adresi:</strong> burakakalin0770@gmail.com</p>
+                    <p><strong>Telefon Numarası:</strong> 05xx-xxx-xxxx</p>
+                    <p><strong>Doğum Tarihi:</strong> 17 Mayıs 2005</p>                   
+                </article>
+
+                <h3>Eğitim Bilgileri</h3>
+                <article class="egitim">
+                    <h3>Lisans</h3>
+                    <p><strong>Üniversite:</strong> Sakarya Üniversitesi</p>
+                    <p><strong>Bölüm:</strong> Bilgisayar Mühendisliği</p>
+                    <p><strong>Başlangıç:</strong> 30 Eylül 2024</p>
+                    <p><strong>Bitiş:</strong> Devam Ediyor</p>
+
+                    <h3>Lise</h3>
+                    <p><strong>Lise Adı:</strong> Adem Tolunay Fen Lisesi</p>
+                    <p><strong>Başlangıç - Bitiş:</strong> 2019-2023</p>
+                </article>
+
+                <h3>Teknik Yetenekler</h3>
+                <article class="teknik">
+                    <p>- C++</p>
+                    <p>- C#</p>
+                    <p>- HTML</p>
+                    <p>- CSS</p>
+                    <p>- JavaScript</p>
+                    <p>- Adobe Photoshop</p>
+                    <p>- Adobe Illustrator</p>
+                </article>
+
+                <h3>Projeler</h3>
+                <article class="proje">
+                    <p>- Ticarethanenin Kar-Zarar Hesabı Projesi = C++</p>
+                    <p>- Tavuk Çiftliği Yönetimi Projesi = C++</p>
+                    <p>- Tatil Sitesi Yönetimi Projesi = C++</p>
+                    <p>- Restoran Menüsü Hazırlama Projesi = C#</p>
+                    <p>- Kelime Ezberleme Programı Projesi = C#</p>
+                </article>
+                <h3>Diller</h3>
+                <article class="dil">
+                    <p>- Türkçe - Ana Dil</p>
+                    <p>- İngilizce - Orta Seviye</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center mt-4">
+        &copy; 2025 Burak Akalın
+    </footer>
+    <style>
+        body {        
+            font-family: 'Montserrat','sans-serif';
+            background-color: #A1E3F9;
+            background-image: linear-gradient(to bottom , #27548A,#A1E3F9);        
+        }
+
+        nav{
+            font-weight: 700px;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+        }
+
+        section {
+            background-color: rgba(0, 0, 0, 0.188);
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        article.kisisel, article.egitim, article.teknik, article.proje, article.dil {
+            margin: 20px 0;
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-left: 5px solid #00BFFF;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #1d3f66, 0 0 10px #1d3f66, 0 0 10px #1d3f66;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.075);
+            backdrop-filter: blur(10px);                  
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2); 
+        }
+
+        .benimButon{
+            background-color: transparent;
+            color: white;
+            border: none;
+            padding: 10px 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            text-decoration: none !important;
+        }
+        .benimButon:hover {
+            background-color: #1d3f66;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            color:#ffffff
+        }
+    </style>
+</body>
+</html>
